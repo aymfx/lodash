@@ -7,13 +7,14 @@
  * @param {Function} iteratee The function invoked per iteration.
  * @returns {Array} Returns the new mapped array.
  */
-function arrayMap(array, iteratee) {
+// 类似原生素组的map
+function arrayMap(array, iteratee) {   
   var index = -1,
       length = array == null ? 0 : array.length,
       result = Array(length);
 
   while (++index < length) {
-    result[index] = iteratee(array[index], index, array);
+    result[index] = iteratee(array[index], index, array);  
   }
   return result;
 }

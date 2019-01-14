@@ -21,6 +21,6 @@
  * _.isArray(_.noop);
  * // => false
  */
-var isArray = Array.isArray;
+var isArray = Array.isArray;  //es6 提供的方法进行判断
 
 module.exports = isArray;

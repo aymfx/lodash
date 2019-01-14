@@ -1,5 +1,5 @@
-var baseToNumber = require('./_baseToNumber'),
-    baseToString = require('./_baseToString');
+var baseToNumber = require('./_baseToNumber'),  //返回number
+    baseToString = require('./_baseToString');  //返回string
 
 /**
  * Creates a function that performs a mathematical operation on two values.
@@ -9,10 +9,13 @@ var baseToNumber = require('./_baseToNumber'),
  * @param {number} [defaultValue] The value used for `undefined` arguments.
  * @returns {Function} Returns the new mathematical operation function.
  */
-function createMathOperation(operator, defaultValue) {
+
+
+
+function createMathOperation(operator, defaultValue) {  //做一个数字的过滤判断 
   return function(value, other) {
     var result;
-    if (value === undefined && other === undefined) {
+    if (value === undefined && other === undefined) {  //
       return defaultValue;
     }
     if (value !== undefined) {
@@ -22,11 +25,12 @@ function createMathOperation(operator, defaultValue) {
       if (result === undefined) {
         return other;
       }
-      if (typeof value == 'string' || typeof other == 'string') {
+      // 两个都存在 进行类型判断
+      if (typeof value == 'string' || typeof other == 'string') { //判断是不是字符串
         value = baseToString(value);
         other = baseToString(other);
       } else {
-        value = baseToNumber(value);
+        value = baseToNumber(value); 
         other = baseToNumber(other);
       }
       result = operator(value, other);

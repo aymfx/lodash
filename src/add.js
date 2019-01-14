@@ -13,8 +13,10 @@ var createMathOperation = require('./_createMathOperation');
  * @example
  *
  * _.add(6, 4);
- * // => 10
+ * // => 10 
  */
+
+//  通过创建数学操作函数实现  createMathOperation(operator, defaultValue)
 var add = createMathOperation(function(augend, addend) {
   return augend + addend;
 }, 0);

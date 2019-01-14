@@ -23,7 +23,7 @@ var symbolTag = '[object Symbol]';
  */
 function isSymbol(value) {
   return typeof value == 'symbol' ||
-    (isObjectLike(value) && baseGetTag(value) == symbolTag);
+    (isObjectLike(value) && baseGetTag(value) == symbolTag); //是对象 并且返回的是[object Symbol]
 }
 
 module.exports = isSymbol;

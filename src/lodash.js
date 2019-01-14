@@ -9,28 +9,29 @@
 ;(function() {
 
   /** Used as a safe reference for `undefined` in pre-ES5 environments. */
-  var undefined;
+  var undefined; //在ES5之前的环境中用作“undefined”的安全参考
 
   /** Used as the semantic version number. */
-  var VERSION = '4.17.11';
+  var VERSION = '4.17.11'; //版本号
 
   /** Used as the size to enable large array optimizations. */
-  var LARGE_ARRAY_SIZE = 200;
+  var LARGE_ARRAY_SIZE = 200; //数组最大为200
 
   /** Error message constants. */
-  var CORE_ERROR_TEXT = 'Unsupported core-js use. Try https://npms.io/search?q=ponyfill.',
-      FUNC_ERROR_TEXT = 'Expected a function';
+  var CORE_ERROR_TEXT = 'Unsupported core-js use. Try https://npms.io/search?q=ponyfill.', //b不支持核心js
+      FUNC_ERROR_TEXT = 'Expected a function';  //不期待函数式
 
   /** Used to stand-in for `undefined` hash values. */
-  var HASH_UNDEFINED = '__lodash_hash_undefined__';
+  var HASH_UNDEFINED = '__lodash_hash_undefined__'; //用于替代`undefined`哈希值
 
   /** Used as the maximum memoize cache size. */
-  var MAX_MEMOIZE_SIZE = 500;
+  var MAX_MEMOIZE_SIZE = 500; //用作最大memoize缓存大小
 
   /** Used as the internal argument placeholder. */
-  var PLACEHOLDER = '__lodash_placeholder__';
+  var PLACEHOLDER = '__lodash_placeholder__'; //用作内部参数占位符
 
   /** Used to compose bitmasks for cloning. */
+  //用于组成用于克隆的位掩码。
   var CLONE_DEEP_FLAG = 1,
       CLONE_FLAT_FLAG = 2,
       CLONE_SYMBOLS_FLAG = 4;
@@ -12356,16 +12357,16 @@
      * _.toFinite('3.2');
      * // => 3.2
      */
-    function toFinite(value) {
+    function toFinite(value) { //转正安全的数字
       if (!value) {
-        return value === 0 ? value : 0;
+        return value === 0 ? value : 0;  //怎样都为0
       }
       value = toNumber(value);
-      if (value === INFINITY || value === -INFINITY) {
+      if (value === INFINITY || value === -INFINITY) { //转正安全的最大值 
         var sign = (value < 0 ? -1 : 1);
         return sign * MAX_INTEGER;
       }
-      return value === value ? value : 0;
+      return value === value ? value : 0;  //类型判断
     }
 
     /**
@@ -12394,7 +12395,7 @@
      * _.toInteger('3.2');
      * // => 3
      */
-    function toInteger(value) {
+    function toInteger(value) {   //转换成整数
       var result = toFinite(value),
           remainder = result % 1;
 
