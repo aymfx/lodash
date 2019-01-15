@@ -1,12 +1,12 @@
-var baseGetTag = require('./_baseGetTag'),
-    isObject = require('./isObject');
+var baseGetTag = require('./_baseGetTag'), //获取基准的tag标签
+    isObject = require('./isObject'); // Object判断
 
 /** `Object#toString` result references. */
 var asyncTag = '[object AsyncFunction]',
     funcTag = '[object Function]',
     genTag = '[object GeneratorFunction]',
     proxyTag = '[object Proxy]';
-
+//原来有这么多标签  
 /**
  * Checks if `value` is classified as a `Function` object.
  *
@@ -24,7 +24,7 @@ var asyncTag = '[object AsyncFunction]',
  * _.isFunction(/abc/);
  * // => false
  */
-function isFunction(value) {
+function isFunction(value) { //判断是否是函数
   if (!isObject(value)) {
     return false;
   }

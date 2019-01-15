@@ -1,6 +1,6 @@
-var Symbol = require('./_Symbol'),
-    getRawTag = require('./_getRawTag'),
-    objectToString = require('./_objectToString');
+var Symbol = require('./_Symbol'), // 获取到环境中的Symbol
+    getRawTag = require('./_getRawTag'), // 获取 元素的标签名 [Oject Object]
+    objectToString = require('./_objectToString'); // //原生的对象转换成  "[object Array]"
 
 /** `Object#toString` result references. */
 var nullTag = '[object Null]',
@@ -16,11 +16,11 @@ var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
  * @param {*} value The value to query.
  * @returns {string} Returns the `toStringTag`.
  */
-function baseGetTag(value) {
+function baseGetTag(value) { //基础的标签获取操作 
   if (value == null) {
     return value === undefined ? undefinedTag : nullTag;
   }
-  return (symToStringTag && symToStringTag in Object(value))
+  return (symToStringTag && symToStringTag in Object(value)) //获取基准的tag标签
     ? getRawTag(value)
     : objectToString(value);
 }

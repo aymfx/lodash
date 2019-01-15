@@ -2,7 +2,7 @@
 var MAX_SAFE_INTEGER = 9007199254740991;
 
 /** Used to detect unsigned integer values. */
-var reIsUint = /^(?:0|[1-9]\d*)$/;
+var reIsUint = /^(?:0|[1-9]\d*)$/;   
 
 /**
  * Checks if `value` is a valid array-like index.
@@ -12,7 +12,7 @@ var reIsUint = /^(?:0|[1-9]\d*)$/;
  * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
  * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
  */
-function isIndex(value, length) {
+function isIndex(value, length) { //判断value是否是有效的下标
   var type = typeof value;
   length = length == null ? MAX_SAFE_INTEGER : length;
 

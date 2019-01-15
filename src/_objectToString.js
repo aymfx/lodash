@@ -15,7 +15,7 @@ var nativeObjectToString = objectProto.toString;
  * @param {*} value The value to convert.
  * @returns {string} Returns the converted string.
  */
-function objectToString(value) {
+function objectToString(value) { //原生的对象转换成  "[object Array]"
   return nativeObjectToString.call(value);
 }
 

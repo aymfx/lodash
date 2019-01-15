@@ -23,9 +23,9 @@
  * _.isObject(null);
  * // => false
  */
-function isObject(value) {
+function isObject(value) { // Object判断
   var type = typeof value;
-  return value != null && (type == 'object' || type == 'function');
+  return value != null && (type == 'object' || type == 'function'); ///只要不是null 是object和function 的一个
 }
 
 module.exports = isObject;

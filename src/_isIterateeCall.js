@@ -1,7 +1,7 @@
-var eq = require('./eq'),
-    isArrayLike = require('./isArrayLike'),
-    isIndex = require('./_isIndex'),
-    isObject = require('./isObject');
+var eq = require('./eq'), //两个数的值和类型比较 
+    isArrayLike = require('./isArrayLike'), //是不是类数组
+    isIndex = require('./_isIndex'), ////判断value是否是有效的下标
+    isObject = require('./isObject'); // Object判断
 
 /**
  * Checks if the given arguments are from an iteratee call.
@@ -13,7 +13,7 @@ var eq = require('./eq'),
  * @returns {boolean} Returns `true` if the arguments are from an iteratee call,
  *  else `false`.
  */
-function isIterateeCall(value, index, object) {
+function isIterateeCall(value, index, object) { //检查给定的参数是否可迭代
   if (!isObject(object)) {
     return false;
   }
@@ -28,3 +28,8 @@ function isIterateeCall(value, index, object) {
 }
 
 module.exports = isIterateeCall;
+
+let s = [1,2,3,4,5,6,7]
+
+
+console.log(isIterateeCall(s,0),1212)

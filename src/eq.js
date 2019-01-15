@@ -30,8 +30,11 @@
  * _.eq(NaN, NaN);
  * // => true
  */
-function eq(value, other) {
+function eq(value, other) {  //NaN也满足条件 为true  
   return value === other || (value !== value && other !== other);
 }
 
+console.log(eq(1,'1'))
+console.log(eq(NaN, NaN))
+console.log(eq(0, -0))
 module.exports = eq;

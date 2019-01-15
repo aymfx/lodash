@@ -1,5 +1,5 @@
-var isFunction = require('./isFunction'),
-    isLength = require('./isLength');
+var isFunction = require('./isFunction'), //判断是否是函数
+    isLength = require('./isLength'); // 判断长度
 
 /**
  * Checks if `value` is array-like. A value is considered array-like if it's
@@ -26,8 +26,14 @@ var isFunction = require('./isFunction'),
  * _.isArrayLike(_.noop);
  * // => false
  */
-function isArrayLike(value) {
+//不是函数 且有长度  不是null
+function isArrayLike(value) {   //是不是类数组
   return value != null && isLength(value.length) && !isFunction(value);
 }
 
 module.exports = isArrayLike;
+
+
+console.log(isArrayLike('adasdasd'), '--------')
+
+console.log(isFunction('asdasd'))

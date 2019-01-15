@@ -7,7 +7,7 @@
  * @param {number} [end=array.length] The end position.
  * @returns {Array} Returns the slice of `array`.
  */
-function baseSlice(array, start, end) {
+function baseSlice(array, start, end) { //遍历切割指定数组
   var index = -1,
       length = array.length;
 
@@ -19,8 +19,9 @@ function baseSlice(array, start, end) {
     end += length;
   }
   length = start > end ? 0 : ((end - start) >>> 0);
+  console.log(start)
   start >>>= 0;
-
+  console.log(start, start >>>= 0)
   var result = Array(length);
   while (++index < length) {
     result[index] = array[index + start];
@@ -29,3 +30,5 @@ function baseSlice(array, start, end) {
 }
 
 module.exports = baseSlice;
+
+console.log(baseSlice([1, 2, 3, 4, 5], 2, 4),'-------')

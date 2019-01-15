@@ -1,4 +1,4 @@
-var baseSlice = require('./_baseSlice'),
+var baseSlice = require('./_baseSlice'), //
     isIterateeCall = require('./_isIterateeCall'),
     toInteger = require('./toInteger');
 
@@ -28,7 +28,7 @@ var nativeCeil = Math.ceil,
  * // => [['a', 'b', 'c'], ['d']]
  */
 function chunk(array, size, guard) {
-  if ((guard ? isIterateeCall(array, size, guard) : size === undefined)) {
+  if ((guard ? isIterateeCall(array, size, guard) : size === undefined)) { //isIterateeCall有点迷糊 
     size = 1;
   } else {
     size = nativeMax(toInteger(size), 0);
@@ -42,9 +42,11 @@ function chunk(array, size, guard) {
       result = Array(nativeCeil(length / size));
 
   while (index < length) {
-    result[resIndex++] = baseSlice(array, index, (index += size));
+    result[resIndex++] = baseSlice(array, index, (index += size)); //通过slice进行切割数组
   }
   return result;
 }
 
 module.exports = chunk;
+
+// console.log(chunk([1,2,3,4,5,6,7]))
