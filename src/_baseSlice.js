@@ -19,10 +19,10 @@ function baseSlice(array, start, end) { //遍历切割指定数组
     end += length;
   }
   length = start > end ? 0 : ((end - start) >>> 0);
-  console.log(start)
+  console.log((length >>>= 0));   //无符号右移
   start >>>= 0;
-  console.log(start, start >>>= 0)
-  var result = Array(length);
+  // console.log(start, start >>>= 0)
+  var result = Array(length); //切割数组到新的字符串中
   while (++index < length) {
     result[index] = array[index + start];
   }

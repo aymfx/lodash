@@ -22,7 +22,7 @@
  * _.isObjectLike(null);
  * // => false
  */
-function isObjectLike(value) {
+function isObjectLike(value) { //仅仅判断是不是对象  排除null 
   return value != null && typeof value == 'object';
 }
 

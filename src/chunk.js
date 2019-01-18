@@ -1,5 +1,5 @@
-var baseSlice = require('./_baseSlice'), //
-    isIterateeCall = require('./_isIterateeCall'),
+var baseSlice = require('./_baseSlice'), ////遍历切割指定数组 
+    isIterateeCall = require('./_isIterateeCall'), //检查给定的参数是否可迭代
     toInteger = require('./toInteger');
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
@@ -27,11 +27,11 @@ var nativeCeil = Math.ceil,
  * _.chunk(['a', 'b', 'c', 'd'], 3);
  * // => [['a', 'b', 'c'], ['d']]
  */
-function chunk(array, size, guard) {
-  if ((guard ? isIterateeCall(array, size, guard) : size === undefined)) { //isIterateeCall有点迷糊 
+function chunk(array, size, guard) { //分割数组
+  if ((guard ? isIterateeCall(array, size, guard) : size === undefined)) { //判断是不是可迭代对象不是就给size赋值
     size = 1;
   } else {
-    size = nativeMax(toInteger(size), 0);
+    size = nativeMax(toInteger(size), 0); //返回一个最大值
   }
   var length = array == null ? 0 : array.length;
   if (!length || size < 1) {

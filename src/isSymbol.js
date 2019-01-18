@@ -1,5 +1,5 @@
-var baseGetTag = require('./_baseGetTag'),
-    isObjectLike = require('./isObjectLike');
+var baseGetTag = require('./_baseGetTag'), //基础的标签获取操作
+    isObjectLike = require('./isObjectLike'); ////仅仅判断是不是对象  排除null
 
 /** `Object#toString` result references. */
 var symbolTag = '[object Symbol]';
@@ -21,7 +21,7 @@ var symbolTag = '[object Symbol]';
  * _.isSymbol('abc');
  * // => false
  */
-function isSymbol(value) {
+function isSymbol(value) {  //判断是不是Symbol
   return typeof value == 'symbol' ||
     (isObjectLike(value) && baseGetTag(value) == symbolTag); //是对象 并且返回的是[object Symbol]
 }

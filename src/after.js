@@ -1,4 +1,4 @@
-var toInteger = require('./toInteger');
+var toInteger = require('./toInteger');  //去整数
 
 /** Error message constants. */
 var FUNC_ERROR_TEXT = 'Expected a function'; //异常处理

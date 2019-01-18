@@ -1,5 +1,5 @@
-var isObject = require('./isObject'),
-    isSymbol = require('./isSymbol');
+var isObject = require('./isObject'), //// Object判断
+    isSymbol = require('./isSymbol'); ////判断是不是Symbol
 
 /** Used as references for various `Number` constants. */
 var NAN = 0 / 0;
@@ -7,17 +7,22 @@ var NAN = 0 / 0;
 /** Used to match leading and trailing whitespace. */
 var reTrim = /^\s+|\s+$/g;
 
-/** Used to detect bad signed hexadecimal string values. */
-var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+console.log(reTrim.test('sss')) //用于匹配前或者后面的空格   /^\s+|\s+$/g
 
+/** Used to detect bad signed hexadecimal string values. */
+var reIsBadHex = /^[-+]0x[0-9a-f]+$/i; //用于检测错误的带符号十六进制字符串值
+
+console.log(reIsBadHex.test('-0x121222'),121212)
 /** Used to detect binary string values. */
-var reIsBinary = /^0b[01]+$/i;
+var reIsBinary = /^0b[01]+$/i;  //j检测是不是二进制数
+
+
 
 /** Used to detect octal string values. */
-var reIsOctal = /^0o[0-7]+$/i;
+var reIsOctal = /^0o[0-7]+$/i;  //检测八进制数
 
 /** Built-in method references without a dependency on `root`. */
-var freeParseInt = parseInt;
+var freeParseInt = parseInt;  //
 
 /**
  * Converts `value` to a number.
@@ -42,7 +47,7 @@ var freeParseInt = parseInt;
  * _.toNumber('3.2');
  * // => 3.2
  */
-function toNumber(value) {
+function toNumber(value) {  //转换成number类型
   if (typeof value == 'number') {
     return value;
   }
@@ -63,4 +68,7 @@ function toNumber(value) {
     : (reIsBadHex.test(value) ? NAN : +value);
 }
 
-module.exports = toNumber;
+module.exports = toNumber;  
+
+// console.log(toNumber(0x1222f))
+// console.log(reIsBadHex.test('0x1222f'),122222222)

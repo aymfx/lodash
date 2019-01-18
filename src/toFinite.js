@@ -1,4 +1,4 @@
-var toNumber = require('./toNumber');
+var toNumber = require('./toNumber');//转换成number类型
 
 /** Used as references for various `Number` constants. */
 var INFINITY = 1 / 0,

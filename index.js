@@ -7,6 +7,6 @@ function log(...params) {
 // const _ =require('./src/lodash')
 // log(_.toFinite(-Infinity+1))
 
-// const array = require('./src/array')
 
-  start >>>= 0;
+//   start >>>= 0;
+
