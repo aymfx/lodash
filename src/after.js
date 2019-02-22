@@ -31,7 +31,7 @@ function after(n, func) {  //函数用于最后一个再调用，等其他结束
   if (typeof func != 'function') {
     throw new TypeError(FUNC_ERROR_TEXT);
   }
-  n = toInteger(n);
+  n = toInteger(n); 
   return function() {
     if (--n < 1) {
       return func.apply(this, arguments);

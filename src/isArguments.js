@@ -1,5 +1,5 @@
-var baseIsArguments = require('./_baseIsArguments'),
-    isObjectLike = require('./isObjectLike');
+var baseIsArguments = require('./_baseIsArguments'), //判断是不是argument对象
+    isObjectLike = require('./isObjectLike'); //仅仅判断是不是对象  排除null
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -8,7 +8,7 @@ var objectProto = Object.prototype;
 var hasOwnProperty = objectProto.hasOwnProperty;
 
 /** Built-in value references. */
-var propertyIsEnumerable = objectProto.propertyIsEnumerable;
+var propertyIsEnumerable = objectProto.propertyIsEnumerable; //是用来检测属性是否属于某个对象的,如果检测到了,返回true,否则返回false.
 
 /**
  * Checks if `value` is likely an `arguments` object.
@@ -34,3 +34,12 @@ var isArguments = baseIsArguments(function() { return arguments; }()) ? baseIsAr
 };
 
 module.exports = isArguments;
+
+function fix() {
+  console.log(arguments.callee, "ly") //[Function: fix]
+  console.log(arguments.caller, "ly") //[Function: fix]
+
+}
+
+
+fix()

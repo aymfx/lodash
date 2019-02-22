@@ -1,6 +1,6 @@
 module.exports = {
-  'chunk': require('./chunk'),
-  'compact': require('./compact'),
+  'chunk': require('./chunk'), // 分割数组
+  'compact': require('./compact'), //去除false元素
   'concat': require('./concat'),
   'difference': require('./difference'),
   'differenceBy': require('./differenceBy'),

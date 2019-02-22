@@ -1,4 +1,4 @@
-var Symbol = require('./_Symbol'),
+var Symbol = require('./_Symbol'), ////返回环境中的Symbol函数  [Function: Symbol]
     isArguments = require('./isArguments'),
     isArray = require('./isArray');
 

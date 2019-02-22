@@ -1,4 +1,4 @@
-var toFinite = require('./toFinite');  //
+var toFinite = require('./toFinite'); //获取安全的数值
 
 /**
  * Converts `value` to an integer.
@@ -26,11 +26,15 @@ var toFinite = require('./toFinite');  //
  * _.toInteger('3.2');
  * // => 3
  */
-function toInteger(value) {
-  var result = toFinite(value),
-      remainder = result % 1;
+function toInteger(value) {  // 
+  var result = toFinite(value), // 
+      remainder = result % 1;  //获取余数
 
   return result === result ? (remainder ? result - remainder : result) : 0;
 }
 
 module.exports = toInteger;
+
+
+console.log(12.5%1)
+

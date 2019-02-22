@@ -1,4 +1,4 @@
-var arrayPush = require('./_arrayPush'),
+var arrayPush = require('./_arrayPush'), //数组push   两个都是数组元素 合并在一起
     baseFlatten = require('./_baseFlatten'),
     copyArray = require('./_copyArray'),
     isArray = require('./isArray');
@@ -41,3 +41,15 @@ function concat() {
 }
 
 module.exports = concat;
+
+let a = [1]
+
+// let b = [2,3,[[4]]]
+
+// c = a.concat(2, [3], [
+//   [4]
+// ])
+
+// console.log(a)
+// console.log(c)
+// console.log(b)

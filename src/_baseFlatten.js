@@ -1,4 +1,4 @@
-var arrayPush = require('./_arrayPush'),
+var arrayPush = require('./_arrayPush'), //数组push   两个都是数组元素 合并在一起
     isFlattenable = require('./_isFlattenable');
 
 /**

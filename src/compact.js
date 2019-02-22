@@ -10,10 +10,10 @@
  * @returns {Array} Returns the new array of filtered values.
  * @example
  *
- * _.compact([0, 1, false, 2, '', 3]);
+ * _.compact([0, 1, false, 2, '', 3]);  //去除false元素
  * // => [1, 2, 3]
  */
-function compact(array) {
+function compact(array) {  //一个循环搞定  通过if判断
   var index = -1,
       length = array == null ? 0 : array.length,
       resIndex = 0,

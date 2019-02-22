@@ -27,7 +27,7 @@ var INFINITY = 1 / 0,
  * _.toFinite('3.2');
  * // => 3.2
  */
-function toFinite(value) {
+function toFinite(value) {  //获取安全的数值
   if (!value) {
     return value === 0 ? value : 0;
   }
